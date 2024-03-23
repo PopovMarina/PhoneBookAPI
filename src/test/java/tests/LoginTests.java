@@ -1,3 +1,5 @@
+package tests;
+
 import helpers.PropertiesReader;
 import helpers.TestConfig;
 import models.AuthenticationRequestModel;
@@ -8,8 +10,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class LoginTest {
-
+public class LoginTests {
     @Test
     public void loginPositive() throws IOException {
 //        AuthenticationRequestModel requestModel = AuthenticationRequestModel
