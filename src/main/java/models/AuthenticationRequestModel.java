@@ -4,8 +4,11 @@ public class AuthenticationRequestModel {
     private String userName;
     private String password;
 
-    public AuthenticationRequestModel(String userName, String password) {
+    private AuthenticationRequestModel(String userName, String password) {
         this.userName = userName;
+        this.password = password;
+    }
+    public AuthenticationRequestModel(String password) {
         this.password = password;
     }
 

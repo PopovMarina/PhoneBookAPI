@@ -2,6 +2,23 @@ package models;
 
 public class ContactModel {
 
+    public ContactModel() {
+
+    }
+
+    @Override
+    public String toString() {
+        return "ContactModel{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
     public String id;
     public String name;
     public String lastName;
@@ -46,9 +63,9 @@ public class ContactModel {
         return this;
     }
 
-    public ContactModel(String id, String name, String lastName,
+    public ContactModel(String name, String lastName,
                         String email, String phone, String address, String description) {
-        this.id = id;
+      //  this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.email = email;
