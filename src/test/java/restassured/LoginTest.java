@@ -44,8 +44,10 @@ import static io.restassured.RestAssured.given;
 public class LoginTest {
 @Test
     public void registrationTest() {
-        NewUserModel newUserModel = new NewUserModel(EmailGenerator.generateEmail(7,7,3)
+        NewUserModel newUserModel = new NewUserModel("kyujh9gk55@hjvc.com", "asdQWE153!");
+                /*NewUserModel(EmailGenerator.generateEmail(7,7,3)
                 , PasswordStringGenerator.generateString());
+                 */
 
         String token = given().body(newUserModel).contentType(ContentType.JSON)
                 .when()
@@ -72,6 +74,6 @@ public class LoginTest {
                 .statusCode(200)
                 .extract()
                 .as(AuthenticationResponseModel.class);
-        System.out.println("Token : "+response.getToken());
+        System.out.println("Token : " + response.getToken());
     }
 }

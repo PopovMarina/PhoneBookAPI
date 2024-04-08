@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DateBaseReader {
-    static String url = "jdbc:mysql://localhost:3336/phonebook";
+    static String url = "jdbc:mysql://localhost:3306/phonebook";
     static String username = "root";
-    static String password = "Mari1981";
+    static String password = "Mari1981$";
 
     public static ContactModel readContactFromDateBase(String id) throws SQLException {
         ContactModel contactModel = null;
@@ -50,6 +50,8 @@ public class DateBaseReader {
         String query = "Select * From contacts";
 
         Statement statement = connection.createStatement();
+        //Statement гораздо более безопасный запрос в БД = тяжелее перехватить,
+        //чем PreparedStatement
 
         ResultSet resultSet = statement.executeQuery(query);
 
@@ -73,13 +75,15 @@ public class DateBaseReader {
 
     public static void main(String[] args) throws SQLException {
 
+        ContactModel contact = readContactFromDateBase("46bf141b-2f48-408a-880b-71baa2b32519");
+        System.out.println("Contact name: " + contact.getName());
+        System.out.println("An email: " + contact.getEmail());
+
+
         List <ContactModel> cont = readAllContactFromDateBase();
         for (ContactModel contactModel : cont) {
             System.out.println("Record: " + contactModel.toString());
         }
-//        ContactModel contactModel = readContactFromDateBase("5555");
-//        System.out.println("Contact name: " + contactModel.getName());
-//        System.out.println("An email: " + contactModel.getEmail());
 
     }
 }
