@@ -14,8 +14,8 @@ import java.sql.SQLException;
 
 public class AddNewContactPositive implements TestHelper {
 String idResult;
-//    @Test
-            public void addNewContact() throws IOException {
+    @Test
+            public void addNewContact() throws IOException, SQLException {
       ContactModel contactModel = new ContactModel(NameAndLastNameGenerator.generateName(),
               NameAndLastNameGenerator.generateLastName(),
               EmailGenerator.generateEmail(7, 5, 3),
@@ -34,10 +34,10 @@ String idResult;
       String responseMsg = contactResponseModel.getMessage();
       idResult = IdExtractor.extractId(responseMsg);
 
-//      DatabaseConnection databaseConnection = new DatabaseConnection();
-//      databaseConnection.contactDatabaseRecorder(idResult, contactModel);
+      DatabaseConnection databaseConnection = new DatabaseConnection();
+      databaseConnection.contactDatabaseRecorder(idResult, contactModel);
 
-      System.out.println("Message: " + idResult);
+      System.out.println("Message: ID " + idResult);
       Assert.assertTrue(response.isSuccessful());
 
     }

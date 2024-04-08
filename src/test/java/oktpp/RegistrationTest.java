@@ -1,6 +1,7 @@
 package oktpp;
 
 import helpers.PropertiesWriterXML;
+import helpers.PropertiesWritter;
 import helpers.TestHelper;
 import models.AuthenticationResponseModel;
 import models.ErrorModel;
@@ -17,7 +18,7 @@ public class RegistrationTest implements TestHelper {
 
     @Test
     public void RegistrationPositive() throws IOException {
-        NewUserModel newUserModel = new NewUserModel("poikhaf770@mail.rud", "Aa1234567$");
+        NewUserModel newUserModel = new NewUserModel("poikha6f9770@mail.rud", "Aa1234567$");
 
         RequestBody requestBody = RequestBody.create(gson.toJson(newUserModel), JSON);
         Request request = new Request.Builder().url(REGISTRATION_PATH).post(requestBody).build();
@@ -33,6 +34,8 @@ public class RegistrationTest implements TestHelper {
 
             PropertiesWriterXML propertiesWriterXML = new PropertiesWriterXML(FILE_PATH);
             propertiesWriterXML.setProperties(TOKEN_KEY, resultToken, false);
+
+            PropertiesWritter.writeProperties("token", resultToken);
 
             Assert.assertTrue(response.isSuccessful());
 
