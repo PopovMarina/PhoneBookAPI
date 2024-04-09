@@ -31,7 +31,7 @@ public static final String ADDCONTACT_PATH =
 public static  final  String DELETE_ALL_CONTACTS_PATH =
         "https://contactapp-telran-backend.herokuapp.com/v1/contacts/clear";
 
-public static  final  String LOGIN_PATH =
+public static final String LOGIN_PATH =
         "https://contactapp-telran-backend.herokuapp.com/v1/user/login/usernamepassword";
 
 }

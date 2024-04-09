@@ -10,6 +10,7 @@ import okhttp3.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.File;
 import java.io.IOException;
 
 public class GetAllContacts implements TestHelper {
