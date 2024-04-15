@@ -19,7 +19,6 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class LoginTest implements TestHelper {
-
     @Test
     public void loginPositive() throws IOException {
         // AuthenticationRequestModel класс представляет модель запроса аутентификации.
@@ -34,14 +33,14 @@ public class LoginTest implements TestHelper {
         System.out.println("REQUEST: " + requestModel.getUserName() + " : "
                 + requestModel.getPassword());
 
-        RequestBody requestBody = RequestBody.
-                create(TestConfig.gson.toJson(requestModel),
+        RequestBody requestBody = RequestBody
+                .create(TestConfig.gson.toJson(requestModel),
                 TestConfig.JSON);
 // Создается объект RequestBody, содержащий данные запроса в формате JSON.
 
 //        Request request = new Request.Builder().url("https://contactapp-telran-backend.herokuapp.com/v1/user/login/usernamepassword")
 //                .post(requestBody).build();
-        Request request = new Request.Builder().url(PropertiesReader.getProperty("loginPassword"))
+        Request request = new Request.Builder().url(PropertiesReader.getProperty("loginPassword1"))
                 .post(requestBody).build();
         System.out.println("REQ " + request.toString());
 // Создается объект Request, представляющий HTTP POST-запрос к указанному URL с телом,
@@ -76,7 +75,7 @@ public class LoginTest implements TestHelper {
                     .string(), AuthenticationResponseModel.class);
 
            PropertiesWritter.writeProperties("token",responseModel.getToken());
-//            System.out.println("Token: "+ responseModel.getToken());
+           System.out.println("Token: "+ responseModel.getToken());
             Assert.assertTrue(response.isSuccessful());
         }
 
@@ -90,4 +89,6 @@ public class LoginTest implements TestHelper {
         }
 
     }
+
+
 }

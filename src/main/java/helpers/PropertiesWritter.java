@@ -14,7 +14,7 @@ public class PropertiesWritter {
 
     public static void main(String[] args) {
 
-        writeProperties("poi7777567@mail.rud", "Aa1234500$");
+        writeProperties("poikhaf770@mail.rud", "Aa1234567$");
     }
 
     public static void writeProperties(String key, String value) {

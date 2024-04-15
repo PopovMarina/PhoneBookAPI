@@ -39,12 +39,13 @@ import models.ContactModel;
 import models.NewUserModel;
 import org.testng.annotations.Test;
 
+import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
 public class LoginTest implements TestHelper {
 @Test
     public void registrationTest() {
-        NewUserModel newUserModel = new NewUserModel("kyuj65h9gk588@hjvc.com", "asdQWE153!");
+        NewUserModel newUserModel = new NewUserModel("poikhaf770@mail.rud", "Aa1234567$");
                 /*NewUserModel(EmailGenerator.generateEmail(7,7,3)
                 , PasswordStringGenerator.generateString());
                  */
@@ -76,11 +77,35 @@ public class LoginTest implements TestHelper {
                 .statusCode(200)
                 .extract()
                 .as(AuthenticationResponseModel.class);
-        PropertiesWritter.writeProperties("token",response.getToken());
+      //  PropertiesWritter.writeProperties("token", response.getToken());
 
-        System.out.println("Token : " + response.getToken());
-
+        System.out.println("Token : "+response.getToken());
     }
+
+
+//    @Test
+//    public void loginTestRestAssured(){
+//
+//       RestAssured.baseURI = LOGIN_PATH;
+//
+//        AuthenticationRequestModel authenticationRequestModel =
+//                AuthenticationRequestModel.userName("poikhaf770@mail.rud").password("Aa1234567$");
+//
+//        AuthenticationResponseModel response = given()
+//                .body(authenticationRequestModel)
+//                .contentType(ContentType.JSON)
+//                .when()
+//                .post("https://contactapp-telran-backend.herokuapp.com/v1/user/login/usernamepassword")
+//                .then().log().all()
+//                .assertThat()
+//                .statusCode(200)
+//                .extract()
+//                .as(AuthenticationResponseModel.class);
+//        PropertiesWritter.writeProperties("token",response.getToken());
+//
+//        System.out.println("Token : " + response.getToken());
+//
+//    }
 
 //    RestAssured.baseURI = LOGIN_PATH;
 //        //RestAssured.baseURI = "https://contactapp-telran-backend.herokuapp.com/v1/user/login/usernamepassword";
