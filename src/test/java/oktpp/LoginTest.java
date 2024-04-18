@@ -26,11 +26,11 @@ public class LoginTest implements TestHelper {
 //                .userName("poi7777@mail.rud").password("Aa12345$");
 
         AuthenticationRequestModel requestModel = AuthenticationRequestModel
-                .userName(PropertiesReader.getProperty("existingUserEmail"))
+                .username(PropertiesReader.getProperty("existingUserEmail"))
                 .password(PropertiesReader.getProperty("existingUserPassword"));
 // Создается экземпляр класса AuthenticationRequestModel с заданными данными
 // пользователя для аутентификации (email и пароль).
-        System.out.println("REQUEST: " + requestModel.getUserName() + " : "
+        System.out.println("REQUEST: " + requestModel.getUsername() + " : "
                 + requestModel.getPassword());
 
         RequestBody requestBody = RequestBody

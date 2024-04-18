@@ -18,7 +18,8 @@ public class MongoDBExample {
     }
 
     public static void addNewEntity() {
-        MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
+        MongoClient mongoClient = MongoClients.create("mongodb+srv://pilgrim74:Mari8888@cluster0.wtwpova.mongodb.net/");
+       // MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
 //MongoClients.create(): Это статический метод, который используется для создания
 // экземпляра MongoClient. Он принимает строку подключения в качестве аргумента.
 // "mongodb://localhost:27017": Это строка подключения к серверу MongoDB.

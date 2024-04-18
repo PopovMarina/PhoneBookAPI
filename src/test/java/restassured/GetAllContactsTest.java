@@ -54,7 +54,7 @@ public class GetAllContactsTest implements TestHelper {
  @Test
  public void loginNegative() {
      AuthenticationRequestModel authenticationRequestModel =
-             AuthenticationRequestModel.userName("hghfhjggfgom").password("jhj453!");
+             AuthenticationRequestModel.username("hghfhjggfgom").password("jhj453!");
 
      ErrorModel errorModel = given().
              body(authenticationRequestModel)

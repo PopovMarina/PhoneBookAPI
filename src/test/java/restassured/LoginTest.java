@@ -66,7 +66,7 @@ public class LoginTest implements TestHelper {
         RestAssured.baseURI = LOGIN_PATH;
 
         AuthenticationRequestModel authenticationRequestModel =
-                AuthenticationRequestModel.userName("poikhaf770@mail.rud").password("Aa1234567$");
+                AuthenticationRequestModel.username("poikhaf770@mail.rud").password("Aa1234567$");
 
         AuthenticationResponseModel response = given()
                 .body(authenticationRequestModel)
